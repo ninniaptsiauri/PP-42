@@ -17,15 +17,15 @@ print(user)
 
 
 
-wrong way
-def add_task(task_name: str, task_list: list = []) -> list:
-    task_list.append(task_name)
-    return task_list
+# wrong way
+# def add_task(task_name: str, task_list: list = []) -> list:
+#     task_list.append(task_name)
+#     return task_list
 
-print(add_task("Do homework"))
-print(add_task("workout"))
+# print(add_task("Do homework"))
+# print(add_task("workout"))
 
-print(add_task("Do homework", ['workout', 'run']))
+# print(add_task("Do homework", ['workout', 'run']))
 
 
 
