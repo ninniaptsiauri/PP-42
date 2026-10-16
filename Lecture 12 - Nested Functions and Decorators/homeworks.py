@@ -17,15 +17,15 @@ print(user)
 
 
 
-# wrong way
-# def add_task(task_name: str, task_list: list = []) -> list:
-#     task_list.append(task_name)
-#     return task_list
+wrong way
+def add_task(task_name: str, task_list: list = []) -> list:
+    task_list.append(task_name)
+    return task_list
 
-# print(add_task("Do homework"))
-# print(add_task("workout"))
+print(add_task("Do homework"))
+print(add_task("workout"))
 
-# print(add_task("Do homework", ['workout', 'run']))
+print(add_task("Do homework", ['workout', 'run']))
 
 
 
@@ -40,3 +40,26 @@ print(add_task("Do Homework"))
 print(add_task("Running"))
 
 print(add_task("Do Homework", ['workout', 'run']))
+
+
+
+def required_role(allowed_role="admin"):
+    def decorator(func):
+        def wrapper(*args, **kwargs):
+            user_role = kwargs.get("user_role")
+
+            if user_role == allowed_role:
+                return func(*args, **kwargs)
+            else:
+                return "Access Denied"
+        return wrapper
+
+    return decorator
+
+
+@required_role("user")
+def delete_user(user_role):
+    return "User deleted"
+
+print(delete_user(user_role="admin"))
+print(delete_user(user_role="user"))
