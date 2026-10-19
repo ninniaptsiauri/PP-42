@@ -36,12 +36,12 @@ import csv
 #     {"name": "Alice", "id": 4, "age": 21}
 # ]
 
-# with open("data.csv", "w") as file:
-#     writer = csv.DictWriter(file, fieldnames=headers, delimiter="\t")
+with open("data.csv", "w") as file:
+    writer = csv.DictWriter(file, fieldnames=headers, delimiter="\t")
 
-#     writer.writeheader()
+    writer.writeheader()
 
-#     writer.writerows(people)
+    writer.writerows(people)
 
 
 # with open("data.csv", "r") as file:
