@@ -47,7 +47,7 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as server:
                 break
             
             if data.decode('utf-8') == "exit":
-                print("Client disconneted")
+                print("Client disconnected")
                 break
 
             print(f'Received: {data.decode("utf-8")}')
@@ -56,8 +56,8 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as server:
             conn.sendall(server_reply.encode('utf-8'))
 
             if server_reply.lower() == "exit":
-                print("Server disconneted")
+                print("Server disconnected")
                 break
 
         
-        
+    
